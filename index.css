@@ -1,0 +1,63 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  background-color: rgb(36, 36, 36);
+  color: rgb(237, 237, 237);
+  font-size: small;
+  margin-bottom: 15rem;
+}
+
+#imagesContainer {
+  display: grid;
+  grid-template-columns: repeat(6, max-content);
+}
+
+button {
+  font-size: medium;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: dodgerblue;
+  color: rgb(237, 237, 237);
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  display: block;
+  margin: 0.5rem;
+  margin-bottom: 3rem;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: rgb(18, 77, 136);
+}
+
+.itemDiv {
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  width: fit-content;
+}
+
+.large-item-image-size {
+  width: 3rem;
+}
+
+.small-item-image-size {
+  width: 2rem;
+}
+
+.itemDescription {
+  display: none;
+  position: absolute;
+  background-color: rgb(9, 9, 24);
+  padding: 0.5rem;
+  max-width: 300px;
+}
+
+.itemTitle {
+  color: gold;
+}
+
+.goldTextHighlight {
+  color: gold;
+}
