@@ -1,4 +1,4 @@
-@import '_variable';
+@import "_variables";
 
 body {
   display: flex;
@@ -41,14 +41,14 @@ button:hover {
 }
 
 .large-item-image-size {
-  width: 3rem;
+  width: $mainItemImageSize;
 }
 
 .small-item-image-size {
-  width: 2rem;
+  width: $secondaryItemImageSize;
 }
 
-.itemDescription {
+.itemTooltip {
   display: none;
   position: absolute;
   background-color: $tooltipBackgroundColor;
@@ -62,4 +62,9 @@ button:hover {
 
 .goldTextHighlight {
   color: $primaryColor;
+}
+
+.imageAboveItem {
+  transform: translateY(-100%) translateY(-$mainItemImageSize)
+    translateY(-0.5rem);
 }

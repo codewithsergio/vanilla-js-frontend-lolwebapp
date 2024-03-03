@@ -3,22 +3,40 @@ CSS styles for custom elements
 from server api for descriptions
 */
 
-passive{
+passive {
   color: gold;
 }
 
-attention{
+attention {
   color: pink;
 }
 
-status{
+status {
   color: rgb(166, 14, 166);
 }
 
-keyword{
+keyword,
+trueDamage {
   color: turquoise;
 }
 
-OnHit{
+OnHit {
   color: rgb(255, 75, 75);
+}
+
+active {
+  color: rgb(255, 187, 60);
+}
+
+healing {
+  color: rgb(80, 219, 80);
+}
+
+scaleMana {
+  color: rgb(132, 132, 255);
+}
+
+magicDamage,
+scaleAP {
+  color: rgb(86, 86, 255);
 }

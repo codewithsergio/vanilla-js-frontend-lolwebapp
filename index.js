@@ -26,7 +26,7 @@ function renderItems(data) {
     itemDiv.setAttribute("class", "itemDiv");
     let itemInformationDiv = document.createElement("div");
     itemInformationDiv.setAttribute("id", `${itemId}-description`);
-    itemInformationDiv.setAttribute("class", `itemDescription`);
+    itemInformationDiv.setAttribute("class", "itemTooltip");
     addImageWithItemIdAndSize(itemDiv, itemId, "large");
     addH2TagWithName(itemInformationDiv, currentItem.name);
     addPTagWithDescription(itemInformationDiv, currentItem.description);
@@ -83,13 +83,20 @@ function addPTagWithIntoArray(thisObject, data, itemsUpgradableInto) {
 }
 
 function hideDescription(itemId) {
-  let itemDiv = document.getElementById(`${itemId}-description`);
-  itemDiv.style.display = "none";
+  let itemDescriptionDiv = document.getElementById(`${itemId}-description`);
+  itemDescriptionDiv.style.display = "none";
+  itemDescriptionDiv.classList.remove("imageAboveItem");
 }
 
 function showDescription(itemId) {
-  let itemDiv = document.getElementById(`${itemId}-description`);
-  itemDiv.style.display = "block";
+  let itemDescriptionDiv = document.getElementById(`${itemId}-description`);
+  itemDescriptionDiv.style.display = "block";
+  const { top, bottom } = itemDescriptionDiv.getBoundingClientRect();
+  const viewportHeight =
+    window.innerHeight || document.documentElement.clientHeight;
+  if (viewportHeight < bottom) {
+    itemDescriptionDiv.classList.add("imageAboveItem");
+  }
 }
 
 function addPTagWithCost(thisObject, gold) {

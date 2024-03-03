@@ -47,7 +47,7 @@ button:hover {
   width: 2rem;
 }
 
-.itemDescription {
+.itemTooltip {
   display: none;
   position: absolute;
   background-color: rgb(9, 9, 24);
@@ -61,4 +61,8 @@ button:hover {
 
 .goldTextHighlight {
   color: gold;
+}
+
+.imageAboveItem {
+  transform: translateY(-100%) translateY(-3rem) translateY(-0.5rem);
 }/*# sourceMappingURL=index.css.map */
