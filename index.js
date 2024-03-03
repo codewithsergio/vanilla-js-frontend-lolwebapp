@@ -1,5 +1,11 @@
 let imagesContainerDiv = document.getElementById("imagesContainer");
 
+document
+  .getElementById("leagueDataButton")
+  .addEventListener("click", function () {
+    getRequestToServer();
+  });
+
 function getRequestToServer() {
   leagueData = fetch("http://localhost:8080/items")
     .then((res) => res.json())
