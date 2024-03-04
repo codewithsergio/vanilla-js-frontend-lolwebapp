@@ -5,10 +5,17 @@ body {
   flex-direction: column;
   align-items: center;
   font-family: "Inter", sans-serif;
-  background-color: rgb(36, 36, 36);
+  background-color: $mainBackgroundColor;
   color: $softWhite;
   font-size: small;
-  margin-bottom: 15rem;
+}
+
+#itemSearchElement {
+  border: 1px $borderColor solid;
+  padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+  background-color: $mainBackgroundColor;
+  color: $softWhite;
+  outline: none;
 }
 
 #imagesContainer {
@@ -42,6 +49,7 @@ button:hover {
 
 .large-item-image-size {
   width: $mainItemImageSize;
+  border: 1px $borderColor solid;
 }
 
 .small-item-image-size {
@@ -52,8 +60,9 @@ button:hover {
   display: none;
   position: absolute;
   background-color: $tooltipBackgroundColor;
-  padding: 0.5rem;
+  padding: 0 1rem 0 1rem;
   max-width: 300px;
+  border: 1px $borderColor solid;
 }
 
 .itemTitle {

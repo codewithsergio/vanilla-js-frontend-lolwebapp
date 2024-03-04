@@ -3,10 +3,17 @@ body {
   flex-direction: column;
   align-items: center;
   font-family: "Inter", sans-serif;
-  background-color: rgb(36, 36, 36);
+  background-color: #010a13;
   color: rgb(237, 237, 237);
   font-size: small;
-  margin-bottom: 15rem;
+}
+
+#itemSearchElement {
+  border: 1px rgba(255, 246, 197, 0.3) solid;
+  padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+  background-color: #010a13;
+  color: rgb(237, 237, 237);
+  outline: none;
 }
 
 #imagesContainer {
@@ -41,6 +48,7 @@ button:hover {
 
 .large-item-image-size {
   width: 3rem;
+  border: 1px rgba(255, 246, 197, 0.3) solid;
 }
 
 .small-item-image-size {
@@ -50,9 +58,10 @@ button:hover {
 .itemTooltip {
   display: none;
   position: absolute;
-  background-color: rgb(9, 9, 24);
-  padding: 0.5rem;
+  background-color: rgb(22, 22, 37);
+  padding: 0 1rem 0 1rem;
   max-width: 300px;
+  border: 1px rgba(255, 246, 197, 0.3) solid;
 }
 
 .itemTitle {

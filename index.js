@@ -1,5 +1,6 @@
 let imagesContainerDiv = document.getElementById("imagesContainer");
 let data;
+let rawData;
 let searchedData;
 
 function updateUserInputSearch(search) {
@@ -26,6 +27,7 @@ function getRequestToServer() {
   leagueData = fetch("http://localhost:8080/items")
     .then((res) => res.json())
     .then((fullJsonResponse) => {
+      rawData = fullJsonResponse.data;
       data = jmespath.search(fullJsonResponse, `data.*`);
       renderItems(data);
     })
@@ -48,7 +50,7 @@ function renderItems(data) {
     addImageWithItemIdAndSize(itemDiv, itemId, "large");
     addH2TagWithName(itemInformationDiv, currentItem.name);
     addPTagWithDescription(itemInformationDiv, currentItem.description);
-    addPTagWithIntoArray(itemInformationDiv, data, currentItem.into);
+    addDivTagWithIntoArray(itemInformationDiv, rawData, currentItem.into);
     addPTagWithCost(itemInformationDiv, currentItem.gold);
     itemDiv.appendChild(itemInformationDiv);
     imagesContainerDiv.appendChild(itemDiv);
@@ -88,7 +90,7 @@ function addPTagWithDescription(thisObject, description) {
 
 // * Takes in an array of strings
 // @return div holding list of p tags
-function addPTagWithIntoArray(thisObject, data, itemsUpgradableInto) {
+function addDivTagWithIntoArray(thisObject, data, itemsUpgradableInto) {
   const intoObject = document.createElement("div");
   intoObject.setAttribute("class", "intoList");
   for (itemIndex in itemsUpgradableInto) {
