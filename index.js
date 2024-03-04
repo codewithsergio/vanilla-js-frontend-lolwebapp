@@ -1,4 +1,20 @@
 let imagesContainerDiv = document.getElementById("imagesContainer");
+let data;
+let searchedData;
+
+function updateUserInputSearch(search) {
+  searchedData = jmespath.search(data, `[?contains(name, '${search}')]`);
+  if (search === "") {
+    renderItems(data);
+  } else {
+    renderItems(searchedData);
+  }
+}
+
+let searchInputField = document.getElementById("itemSearchElement");
+searchInputField.addEventListener("input", function (event) {
+  updateUserInputSearch(this.value);
+});
 
 document
   .getElementById("leagueDataButton")
@@ -10,7 +26,7 @@ function getRequestToServer() {
   leagueData = fetch("http://localhost:8080/items")
     .then((res) => res.json())
     .then((fullJsonResponse) => {
-      const data = fullJsonResponse.data;
+      data = jmespath.search(fullJsonResponse, `data.*`);
       renderItems(data);
     })
     .catch((error) => {
@@ -19,8 +35,10 @@ function getRequestToServer() {
 }
 
 function renderItems(data) {
-  for (itemId in data) {
-    let currentItem = data[itemId];
+  imagesContainerDiv.innerHTML = "";
+  for (index in data) {
+    let itemId = data[index].id;
+    let currentItem = data[index];
     let itemDiv = document.createElement("div");
     itemDiv.setAttribute("id", `${itemId}-maindiv`);
     itemDiv.setAttribute("class", "itemDiv");
