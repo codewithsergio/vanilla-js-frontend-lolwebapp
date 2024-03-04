@@ -11,5 +11,6 @@ Learn how to make a dynamic website with Vanilla js and manipulating the DOM.
 - Organize items by cost (either server or client side will organize)
 - ~~Implement a search functionality (e.g. using a trie graph)~~
 - Make item searches not case sensitive
+- Improve the search (e.g. be able to find merc treads by searching `boots`)
 - Refactor
   - CSS files with better names instead of itemDiv
